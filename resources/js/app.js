@@ -16,7 +16,7 @@ import "./assets/vendor/swiper/swiper-bundle.min.css";
 import "./assets/css/style.css";
 // -- Vendor JS Files -->
 import "./assets/vendor/purecounter/purecounter_vanilla.js";
-import "./assets/vendor/aos/aos.js";
+// import "./assets/vendor/aos/aos.js";
 import "./assets/vendor/bootstrap/js/bootstrap.bundle.min.js";
 import "./assets/vendor/glightbox/js/glightbox.min.js";
 import "./assets/vendor/isotope-layout/isotope.pkgd.min.js";
