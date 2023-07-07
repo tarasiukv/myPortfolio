@@ -1,5 +1,13 @@
-<script>
+<script setup>
+import useUsers from "../../Composables/users.js";
+import {onMounted} from "vue";
 
+const {getUsers, users} = useUsers();
+
+onMounted(async () => {
+    await getUsers();
+    console.log(users.value)
+})
 </script>
 
 <template>
@@ -32,11 +40,14 @@
                             </ul>
                         </div>
                         <div class="col-lg-6">
+<!--                            <ul>-->
+<!--                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>-->
+<!--                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>-->
+<!--                                <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span></li>-->
+<!--                                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>-->
+<!--                            </ul>-->
                             <ul>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                                <li v-for="user in users" key="user.id">{{ user.email }}</li>
                             </ul>
                         </div>
                     </div>
